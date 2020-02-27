@@ -1,0 +1,42 @@
+{
+    "name": "okn/laravel-ovh-sms",
+    "description": "OVH wrapper for Laravel",
+    "keywords": [
+        "ovh",
+        "laravel",
+        "laravel 5",
+        "wrap",
+        "api",
+        "sms"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "okyn",
+            "email": "0kyn.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/support": "4.*|5.*|6.*",
+        "ovh/ovh": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Okn\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Okn\\OvhSms\\OvhSmsServiceProvider"
+            ],
+            "aliases": {
+                "OvhSms": "Okn\\OvhSms\\Facades\\OvhSms"
+            }
+        }
+    }
+}
