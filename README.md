@@ -42,6 +42,14 @@ OVHSMS_ENDPOINT=
 OVHSMS_SERVICE_NAME=
 ```
 
+To make this library works with your project you need to define 
+homogeneous routes rights (all ending with a trailing slash or none). 
+Default config add one (ex: `/sms/*/jobs` becomes `/sms/*/jobs/`), so to fit your rights you might add the following line in your `.env` file:
+
+```env
+OVHSMS_TRAILING_SLASH=false
+```
+
 ## Usage
 
 ### Default use

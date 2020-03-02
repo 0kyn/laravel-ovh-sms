@@ -21,6 +21,7 @@ class OvhSms
     private $endpoint;
     private $consumerKey;
     private $serviceName;
+    private $trailingSlah;
     private $sslVerify;
 
     private $message;
@@ -34,6 +35,7 @@ class OvhSms
         $this->endpoint = $config['endpoint'];
         $this->consumerKey = $config['consumer_key'];
         $this->serviceName = $config['service_name'];
+        $this->trailingSlah = isset($config['ssl_verify']) && !$config['ssl_verify'] ? '' : '/';
         $this->sslVerify = isset($config['ssl_verify']) && !$config['ssl_verify'] ? false : true;
 
         $client = new Client([
@@ -74,7 +76,7 @@ class OvhSms
             'senderType' => $senderType,
         ];
 
-        $parts = $this->client->post('/sms/estimate/', $data)['parts'];
+        $parts = $this->client->post('/sms/estimate' . $this->trailingSlah, $data)['parts'];
 
         return $parts;
     }
@@ -111,7 +113,7 @@ class OvhSms
         ];
         $data = (object) array_merge($this->options, $options);
 
-        $response = $this->client->post('/sms/' . $this->serviceName . '/jobs', $data);
+        $response = $this->client->post('/sms/' . $this->serviceName . '/jobs' . $this->trailingSlah, $data);
 
         return $response;
     }
