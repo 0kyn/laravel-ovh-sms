@@ -35,7 +35,7 @@ class OvhSms
         $this->endpoint = $config['endpoint'];
         $this->consumerKey = $config['consumer_key'];
         $this->serviceName = $config['service_name'];
-        $this->trailingSlah = isset($config['ssl_verify']) && !$config['ssl_verify'] ? '' : '/';
+        $this->trailingSlah = isset($config['trailing_slash']) && !$config['trailing_slash'] ? '' : '/';
         $this->sslVerify = isset($config['ssl_verify']) && !$config['ssl_verify'] ? false : true;
 
         $client = new Client([

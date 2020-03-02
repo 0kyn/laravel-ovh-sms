@@ -29,7 +29,7 @@ return [
     /**
      * Trailing Slash 
      */
-    'service_name' => env('OVHSMS_TRAILING_SLASH', true),
+    'trailing_slash' => env('OVHSMS_TRAILING_SLASH', true),
 
     /**
      * Verfify SSL 
