@@ -55,7 +55,7 @@ OVHSMS_TRAILING_SLASH=false
 ### Default use
 1. Create a message
 ```php
-$sms = OneSignal::createMessage('This my sms. Can you read it ?');
+$sms = OvhSms::createMessage('This my sms. Can you read it ?');
 ```
 
 2. Send message
